@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>ジャンケングリコ</title>
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+
+    <h1>ジャンケングリコ</h1>
+
+    <div id="board">
+        <!-- 20マスを自動生成 -->
+        <!-- JavaScriptで中身を入れる -->
+    </div>
+
+    <div id="players">
+        <p>あなたの位置: <span id="playerPos">0</span></p>
+        <p>CPUの位置: <span id="cpuPos">0</span></p>
+    </div>
+
+    <h2>ジャンケン</h2>
+    <div id="buttons">
+        <button class="jbtn" data-hand="0">グー（0）</button>
+        <button class="jbtn" data-hand="2">チョキ（2）</button>
+        <button class="jbtn" data-hand="5">パー（5）</button>
+    </div>
+
+    <p id="result"></p>
+    <p id="winner"></p>
+
+    <button id="resetBtn">リセット</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/game.js"></script>
+
+</body>
+
+</html>

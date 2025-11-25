@@ -1,0 +1,138 @@
+body {
+    font-family: "Nikukyu", sans-serif;
+    text-align: center;
+    padding: 20px;
+
+    /* リッチグラデーション背景 */
+    background: linear-gradient(135deg, #ffe29f, #ffa99f, #ff719a);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ff4d6d;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 48px);
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 48px;
+    height: 48px;
+    background: #ffffffcc;
+    border-radius: 10px;
+    border: 2px solid #ffcdd2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    color: #555;
+}
+
+.player,
+.cpu {
+    position: absolute;
+    width: 32px;
+    /* ← 画像サイズ調整 */
+    height: auto;
+    pointer-events: none;
+    /* ← クリックを邪魔しない */
+}
+
+.player {
+    color: red;
+    top: -6px;
+    content: "👦";
+}
+
+.cpu {
+    color: blue;
+    bottom: -6px;
+}
+
+.jbtn {
+    padding: 12px 24px;
+    margin: 6px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    box-shadow: 0px 3px 6px #00000022;
+    transition: 0.2s;
+}
+
+.jbtn:hover {
+    transform: translateY(-3px);
+    background: #ffe6f0;
+}
+
+#result,
+#winner {
+    font-size: 20px;
+    margin-top: 12px;
+    min-height: 32px;
+    animation: fade 0.6s forwards;
+    color: #333;
+    font-weight: bold;
+}
+
+.learn {
+    color: #d90000;
+    font-weight: bold;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#resetBtn {
+    margin-top: 25px;
+    padding: 10px 22px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #fff;
+    border: none;
+    box-shadow: 0px 3px 6px #00000022;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#resetBtn:hover {
+    transform: translateY(-3px);
+    background: #eaeaff;
+}

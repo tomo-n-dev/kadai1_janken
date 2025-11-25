@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Nikukyu";
+    color: crimson;
+}
+
+h2 {
+    font-family: "Nikukyu";
+    color: aqua;
+}
+
+#board {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    gap: 4px;
+}
+
+.cell {
+    border: 1px solid #aaa;
+    padding: 10px 0;
+    position: relative;
+    background: #f7f7f7;
+}
+
+.player,
+.cpu {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.player {
+    top: 5px;
+    background: blue;
+}
+
+.cpu {
+    bottom: 5px;
+    background: red;
+}
+
+.jbtn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#winner {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    margin-top: 20px;
+}

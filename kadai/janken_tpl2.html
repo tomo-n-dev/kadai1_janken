@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>じゃんけん</h1>
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizQb-uhR2lvPNWzG-ubN3pK-qoEbb87nl8ZmmXnt6sY2OBcxRAh3racGtnnh5jsov2jzyvo2Dcpm9WyBC2cHZ_FYq_gsiKIRQ73VmGh-5bpyNVLvjD16p3qcfFXELDlWmekIm5fag0SKE/s500/janken_boys.png">
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+    <div id="judgment">勝ち</div>
+  </main>
+
+  <footer></footer>
+  <script>
+    //じゃんけん用のSCRIPTを書いてください
+    $(function () {
+      $("#gu_btn, #cho_btn, #par_btn").on("click", function () {
+        const playerHand = $(this).text();
+        const hands = ["グー", "チョキ", "パー"];
+        const computerHand = hands[Math.floor(Math.random() * hands.length)];
+        $("#pc_hands").text(computerHand);
+
+        let result = "";
+        let resultClass = "";
+
+        if (playerHand === computerHand) {
+          result = "あいこ";
+          resultClass = "draw";
+        } else if (
+          (playerHand === "グー" && computerHand === "チョキ") ||
+          (playerHand === "チョキ" && computerHand === "パー") ||
+          (playerHand === "パー" && computerHand === "グー")
+        ) {
+          result = "勝ち！";
+          resultClass = "win";
+        } else {
+          result = "負け…";
+          resultClass = "lose";
+        }
+
+        // 結果を表示＆色を切り替え
+        $("#judgment")
+          .text(result)
+          .removeClass("win lose draw") // 以前のクラスを削除
+          .addClass(resultClass);       // 新しいクラスを追加
+      });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
